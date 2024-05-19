@@ -90,14 +90,19 @@ const router = createBrowserRouter([
       <TemplateGallery/>
     </ProtectedRoute>
   }, {
-    path: '/templates', element: (<ProtectedRoute>
+    path: '/templates', element: (
+    // <ProtectedRoute>
       <Outlet/>
-    </ProtectedRoute>), children: [{
+    // </ProtectedRoute>
+
+    ), children: [{
       index: true, element: <Template/>
     }, {
-      path: ':id/builder', element: (<TemplateContainer>
+      path: ':id/builder', element: (
+      <TemplateContainer>
         <FormBuilder/>
-      </TemplateContainer>)
+      </TemplateContainer>
+      )
     }, {
       path: ':id/overview', element: (<TemplateContainer>
         <Overview/>

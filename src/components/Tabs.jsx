@@ -1,28 +1,28 @@
-import {twMerge} from "tailwind-merge";
-import {Link, useLocation, useParams} from "react-router-dom";
+import { twMerge } from "tailwind-merge";
+import { Link, useLocation, useParams } from "react-router-dom";
+const Tabs = ({ tabs }) => {
+  const pathname = useLocation().pathname;
+  const { id } = useParams();
 
-const Tabs = ({tabs}) => {
-  const pathname = useLocation().pathname
-  const {id} = useParams();
-  return (<div className='flex font-medium text-sm border-b-2 border-gray-300 overflow-x-auto sm:overflow-x-hidden
-  scrollbar-thin scrollbar-thumb-grey-300 scrollbar-track-grey-200'>
-    {tabs.map((tab) => {
-      return <Link
-        data-current-tab={tab.name}
-        key={tab.name}
-        to={`/templates/${id}/${tab.url}`}
-        className={twMerge(`
-           text-gray-500  inline-block flex items-center p-4 rounded-t-lg hover:text-gray-600 space-x-2 
-           ${(pathname.includes(tab.url)) && 'border-b-4 border-bgDark hover:border-gray-500 text-gray-900 hover:text-gray-600'}`)}
-      >
-          <span
-            data-current-tab={tab.name}
+  return (
+    <div className="flex flex-1 justify-center">
+      {tabs.map((tab) => {
+        const isActive = pathname.includes(tab.url);
+        return (
+          <Link
+            key={tab.name}
+            to={`/templates/${id}/${tab.url}`}
+            className={twMerge(`
+              text-center py-2 px-4 text-sm font-medium text-gray-600 hover:text-gray-900
+              ${isActive ? 'border-b-2 border-blue-500' : 'border-b-4 border-transparent'}
+            `)}
           >
             {tab.name}
-          </span>
-      </Link>
-    })}
-  </div>)
-}
+          </Link>
+        );
+      })}
+    </div>
+  );
+};
 
-export default Tabs
+export default Tabs;

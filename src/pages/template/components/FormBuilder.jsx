@@ -98,8 +98,8 @@ const FormBuilder = () => {
   }
 
   return (
-    <div className="common">
-      <div className="flex justify-between pb-5 items-center flex-wrap gap-5">
+    <div className="common main-form-builder">
+      {/* <div className="flex justify-between pb-5 items-center flex-wrap gap-5 px-4 py-4">
         <Button
           btnText="Discard"
           btnClasses="text-red-500 bg-red-100 px-6 grow sm:grow-0"
@@ -108,7 +108,7 @@ const FormBuilder = () => {
           BtnIcon={TrashIcon}
           iconClasses="text-red-500"
         />
-        <div className="flex gap-3 items-center flex-wrap">
+        <div className="flex gap-3 items-center flex-wrap ">
           <span
             className="text-yellow-800 text-sm font-semibold px-2.5 py-0.5 rounded text-center dark:bg-yellow-200 dark:text-yellow-900 grow sm:grow-0">
             {capitalize(waiver?.status)}
@@ -139,7 +139,7 @@ const FormBuilder = () => {
             />
           )}
         </div>
-      </div>
+      </div> */}
       <div ref={fb}/>
       <Modal
         open={openModal}
