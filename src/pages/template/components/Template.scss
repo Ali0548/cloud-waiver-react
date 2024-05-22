@@ -1,100 +1,110 @@
 .main-form-builder {
-    background-color: #F8F8FF !important;
+  background-color: #E9E9F9 !important;
 }
 
 .stage-wrap {
-    padding: 55px !important;
-    background-color: #F8F8FF !important;
-    border: 2px solid #FFFFFF !important;
-    border-radius: 10px;
+  padding: 55px !important;
+  background-color: #F8F8FF !important;
+  border: 2px solid #FFFFFF !important;
+  border-radius: 10px;
+  width: 81% !important;
 }
 
 .pull-left {
-    float: right !important;
+  float: right !important;
 }
 
 .pull-right {
-    float: left !important;
+  float: left !important;
 }
 
 .cb-wrap {
-    max-height: 100vh; // Ensure the container does not exceed the viewport height
-    overflow-y: auto !important;
+  max-height: 100vh; /* Ensure the container does not exceed the viewport height */
+  overflow-y: auto !important;
+  scrollbar-color: #7E79FA !important;
+  width: 19% !important;
+  padding: 10px !important;
+  background-color: #fff !important;
+  border-right: 1px solid #dcdcdc;
   
-    ul {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+  &::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background of the scrollbar track */
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #7E79FA; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Optional: rounded corners for the scrollbar thumb */
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background: #5A56C9; /* Darker shade for hover effect (optional) */
+  }
+  
+  /* Firefox */
+  scrollbar-width: thin; /* Make the scrollbar thinner */
+  scrollbar-color: #7E79FA #f1f1f1; /* Color of the scrollbar thumb and track */
+  
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+    li, .input-control, .input-control-14 {
+      width: calc(50% - 10px) !important;
+      background-color: #fff !important;
+      border: 1px solid #dcdcdc;
+      border-radius: 12px;
+      text-align: center !important;
+      cursor: pointer;
+      padding: 10px 10px 10px 10px !important;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: auto !important;
+      min-height: 150px !important;
       
-     
-  
-      li {
-        background-color: #fff !important;
-        border: 1px solid #dcdcdc;
-        border-radius: 20px;
-        text-align: -webkit-center !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        // transition: box-shadow 0.3s ease, transform 0.3s ease;
-        cursor: pointer;
-        width: 55% !important; // Set the width to 66%
-        margin: auto !important; // Center the items horizontally
-        height: 90% !important; // Set the height to 95% of the parent container
-        padding: 50px !important;
-        span {
-            justify-content: center !important;
-        } 
-          
-        font-size: 0.5rem !important;
-        &:hover {
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          transform: translateY(-2px);
-        }
-  
-        .drag-handle {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          margin-bottom: 10px;
-        }
-  
-        .control-icon {
-          font-size: 24px;
-          margin-bottom: 10px;
-        }
-  
-        .control-text {
-          font-size: 14px;
-          word-wrap: break-word;
-          width: 100%;
-          flex-grow: 1; // Ensure the text takes up available space
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
+      .control-icon {
+        font-size: 20px !important;
+        margin-bottom: 5px !important; /* Space between icon and text */
+      }
+
+      span {
+        font-size: 10px !important;
+        white-space: normal !important; /* Ensures text wraps to the next line */
+        display: block !important; /* Makes span behave like a block element */
+        text-align: center !important; /* Center-align the text */
+      }
+      
+      font-size: 0.75rem !important;
+      
+      &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
       }
     }
   }
-  .input-set-control {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important; /* Ensures the text is centered */
-  }
-  
-  .control-icon {
-    display: block !important;
-    margin-bottom: 0.5em !important; /* Space between icon and text */
-  }
-  
-  /* Adjustments to ensure the icon and text are treated as separate lines */
-//   .input-set-control .control-icon::before {
-//     content: "\270F"; /* Unicode for the pencil icon */
-//     font-size: 0.5em !important; /* Adjust the icon size as needed */
-//     display: block !important; /* Ensure it appears on its own line */
-//   }
-  
-  
-  
-  
+}
+
+.input-set-control {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  /* Ensures the text is centered */
+}
+
+.control-icon {
+  display: block !important;
+  text-align: center !important;
+  justify-content: center !important;
+  /* Space between icon and text */
+}

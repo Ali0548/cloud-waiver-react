@@ -140,7 +140,7 @@ const FormBuilder = () => {
           )}
         </div>
       </div> */}
-      <div ref={fb}/>
+     <div ref={fb}/>
       <Modal
         open={openModal}
         setOpen={setOpenModal}

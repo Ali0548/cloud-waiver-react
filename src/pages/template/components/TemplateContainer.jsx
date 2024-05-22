@@ -60,7 +60,7 @@ const TemplateContainer = ({ children }) => {
     <main >
       {loading && <Spinner />}
       <div className="bg-white shadow rounded-md">
-        <div className="flex items-center px-4 py-4">
+        <div className="flex items-center px-4 py-1">
           <button
             onClick={() => navigate(-1)}
             className="flex items-center"
@@ -73,9 +73,8 @@ const TemplateContainer = ({ children }) => {
           </button>
           <Tabs tabs={tabsData} />
         </div>
-        <div className="py-6 px-4 sm:p-6">
+   
           {children}
-        </div>
       </div>
 
     </main>
